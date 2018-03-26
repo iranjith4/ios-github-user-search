@@ -46,7 +46,6 @@ class GithubUsersViewController: UIViewController {
             .bind(to: usersTableView.rx.items) { tableView, row, user in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell")!
                 cell.textLabel?.text = user.login
-                cell.imageView?.kf.setImage(with: URL.init(string: user.avatarURL))
                 cell.imageView?.kf.setImage(with: URL.init(string: user.avatarURL), placeholder: #imageLiteral(resourceName: "avatar"), options: nil, progressBlock: nil, completionHandler: nil)
                 return cell
             }
